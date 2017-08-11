@@ -1,0 +1,129 @@
+<! DOCTYPE html>
+<html>
+<title>JS Proj by Christine</title>
+<link rel="stylesheet" href="styles.css" />
+
+<head>
+
+</head>
+
+<body>
+    <div>
+        <!--Event handlers-->
+        <button onclick="doClick()">Click click</button>
+
+
+        <button onclick="this.innerHTML = 'You Clicked Me'">self changer </button>
+        <!--alternatively > check 1st handler-->
+        <button onclick="changeTxt(this)">self changer2</button>
+        <button onmouseover="showDate()" onmouseout="hideDate()">Show Date</button>
+        <p id="time"></p>
+
+    </div>
+</body>
+<script>
+    // string variable
+    var welcomeMsg = 'Hi there, welcome';
+    // arrays
+    var continents;
+    continents = ['Africa', 'Asia', 'North America', 'South America', 'Europe', 'Australia']
+    // adding new element to array
+    continents.push('Antarctica')
+    // alert(continents[2] + continents[5]);
+
+    // loops
+    // ======for
+    for (var i = 0; i < continents.length; i++) {
+        console.log('i is ' + i);
+    }
+    console.log('====end===');
+
+    // =====while
+    var n = 1
+    while (n < 10) {
+        console.log('whoop I am ' + n);;
+        n = n * 2;
+
+    };
+
+
+    // forEach, leveraging on the earlier created continents array
+    continents.forEach(function (continent) {
+        console.log(continent);
+    });
+
+    // replicating the same using for
+    for (var i = 0; i < continents.length; i++) {
+        console.log(continents[i]);
+    }
+
+    var a = 1;
+    if (a == 1) {
+        console.log('a is as expected')
+    } else {
+        console.log('a is not 1')
+    };
+
+
+    // Objects
+    // === Literal - encapsulate everything inside its own object
+
+    var me = {
+        firstName: 'Christine',
+        lastName: 'Nagadya',
+        interests: ['Travel', 'Zip linning'],//'this' is a key word,
+        fullname: function () {
+            return this.firstName + ' ' + this.lastName;
+        }
+    };
+    // console.log(me.fullname());
+
+    // === constructor
+
+    var joe = new Object;
+    joe.firstName = "Joe";
+    joe.lastName = "Smith";
+    joe.interests = ['Traveling', 'Zip linning'];
+
+    joe.describe = function () {
+        return this.firstName + ' ' + this.lastName + " loves " + this.interests[0] + " and " + this.interests[1];
+
+    };
+    //console.log(joe.describe());
+
+    // === constructor patterns
+    function person(firstName, lastName, interests) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.interests = interests;
+    }
+
+    var christine = new person('Christine', 'Nagadya', ['Traveling', 'Zip linning']);
+    var Christine = new person('Christine', 'Nagadya');
+    console.log(christine);
+    console.log(Christine);
+
+
+    // Event handlers
+    function doClick() {
+        alert("You clicked clicky");
+    };
+
+    function changeTxt(id){
+        id.innerHTML = "You Clicked Moi!"; 
+    };
+
+    function showDate(){
+        var time = document.getElementById('time');
+        time.innerHTML = "Today's date " + Date();
+
+    };
+    function hideDate(){
+        var time = document.getElementById('time');
+        time.innerHTML = "";
+
+    };
+
+</script>
+
+</html>
