@@ -14,6 +14,7 @@
         <input type="text" name="pname" id="pname" />
         <label class="colorer"> Person Age </label>
         <select name="age" id="age">
+        <option value="select_age">---Select--</option>
         <option value="child">0-12</option>
         <option value="teen">13-19</option>
         <option value="youth">20-35</option>
@@ -28,7 +29,13 @@
         if (person_name == null || person_name == "") {
             alert('Invalid Person Name');
             return False
-        }
+        };
+
+        var age = document.forms['personForm']['age'].value;
+        if (age == "select_age") {
+            alert('Select a valid age range');
+            return False
+        };
 
     }
 
