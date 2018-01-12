@@ -5,8 +5,5 @@ function createParagraph(){
   clicks += 1;
   document.body.appendChild(new_paragraph);
 }
-var buttons = document.querySelectorAll('button');
-
-for (var i = 0; i < buttons.length ; i++) {
-  buttons[i].addEventListener('click', createParagraph);
-}
+var buttons = document.getElementById('clickybutton');
+buttons.addEventListener('click', createParagraph);
