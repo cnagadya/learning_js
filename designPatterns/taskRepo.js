@@ -1,21 +1,16 @@
-var repo= function(){
-  var db={};
+var repo = function () {
+  var db = {};
 
-  var get = function (id){
+  var get = function (id) {
     console.log(`Getting task with id ${id}`)
-    return {
-      name: `task ${id}`
-    }
+    return {name: `task ${id}`}
   }
 
-  var save = function(task){
+  var save = function (task) {
     console.log(`Saving ${task.name}`)
   }
-
-  return{
-    get: get,
-    save: save
-  }
+console.log("Issa task repo")
+  return {get: get, save: save}
 }
 
-module.exports=repo();
+module.exports = repo();
