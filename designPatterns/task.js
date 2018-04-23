@@ -1,12 +1,15 @@
-var Task=function(name){
-  this.name=name;
-  this.completed=false;
+var Repo = require('./taskRepo');
+var Task = function (data) {
+  this.name = data.name;
+  this.completed = data.completed;
 }
 
-Task.prototype.complete=function(){
+Task.prototype.complete = function () {
   console.log(`completing ${this.name}`)
-  this.completed=true;
+  this.completed = true;
 }
-Task.prototype.save=function(){
- console.log(`saving ${this.name}`)}
-module.exports=Task
+Task.prototype.save = function () {
+  // console.log(`saving ${this.name}`);
+  Repo.save(this);
+}
+module.exports = Task
