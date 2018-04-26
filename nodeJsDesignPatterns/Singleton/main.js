@@ -1,4 +1,4 @@
-var repo = require('./repo')('repo');
+var repo = require('./repo');
 var taskHandler = require('./taskHandler');
 repo.save('singleton')
 repo.save('singleton')

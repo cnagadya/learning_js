@@ -1,4 +1,4 @@
-var repo = require('./repo')('taskHandler');
+var repo = require('./repo');
 var taskHandler = function(){
   return{
     save:function (task) {
